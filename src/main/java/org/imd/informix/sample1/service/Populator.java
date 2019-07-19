@@ -6,6 +6,7 @@ import org.imd.informix.sample1.model.pojo.TTPojo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 
 /**
  * @author Iliyan_Dimov
@@ -19,6 +20,9 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        StopWatch stopWatch = new StopWatch("Populator ");
+        stopWatch.start("loading data ... ");
+
         for (int x = 0; x < 10000; x ++) {
             System.out.println(x);
 
@@ -29,5 +33,8 @@ public class Populator implements CommandLineRunner {
             ttPojo.setData(String.valueOf(System.currentTimeMillis()));
             ttDao.insertRecord(ttPojo);
         }
+
+        stopWatch.stop();
+        System.out.println(stopWatch.prettyPrint());
     }
 }
