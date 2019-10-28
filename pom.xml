@@ -8,10 +8,11 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>org.imd.informix</groupId>
-	<artifactId>sprring-boot-informix-sample1</artifactId>
+	<artifactId>spring-boot-informix-sample1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sprring-boot-informix-sample1</name>
+	<name>spring-boot-informix-sample1</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

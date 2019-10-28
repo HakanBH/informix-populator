@@ -1,5 +1,6 @@
 package org.imd.informix.sample1.service;
 
+import java.util.Arrays;
 import java.util.Date;
 import org.imd.informix.sample1.dao.AcdmDao;
 import org.imd.informix.sample1.model.Acdm;
@@ -27,16 +28,21 @@ public class Populator implements CommandLineRunner {
         StopWatch stopWatch = new StopWatch("Populator ");
         stopWatch.start("loading data ... ");
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.println(i);
             Acdm acdm =
-                new Acdm(0, "ACMA", "BG", i, "220", 7654321, "BGN", 123.41, "ACMA", new Date(), new Date(),
-                    1234567890.16652, "D", "S", "N");
+                new Acdm(0, "ADMA", "BG", i, "220", 7654321, "BGN", 123.41, "ACMA", new Date(), new Date(),
+                    1234567890.12345, "A", "S", "N");
 
             this.acdmDao.insertRecord(acdm);
         }
 
         stopWatch.stop();
         System.out.println(stopWatch.prettyPrint());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString("S".getBytes()));
+        System.out.println(Arrays.toString("A".getBytes()));
     }
 }
